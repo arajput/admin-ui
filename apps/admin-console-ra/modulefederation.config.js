@@ -1,13 +1,13 @@
 const { dependencies } = require("./package.json");
 
 module.exports = {
-  name: "configui",
+  name: "adminconsole_ra",
   exposes: {
     "./App": "./src/App",
-    "./ConfigEditorPage": "./src/pages/config-view/ConfigEditorPage",
-    "./ConfigEditor": "./src/pages/config-view/ConfigEditor",
   },
-  remotes: {},
+  remotes: {
+    configui: `configui@[window.appModules.configui.url]/moduleEntry.js`,
+  },
   filename: "moduleEntry.js",
   shared: {
     ...dependencies,
